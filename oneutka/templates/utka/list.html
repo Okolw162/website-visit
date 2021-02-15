@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Последние статьи{% endblock %}
+
+{% block content %}
+
+	{% if latest_utka_list %}
+
+		{% for a in latest_utka_list%}
+			<a href="{% url 'utka:detail' a.id %}">{{a.utka_title}}</a>
+		{% endfor %}
+
+	{% else %}
+		Статьи не найдены )=
+	{% endif %}
+
+{% endblock %}
